@@ -25,10 +25,8 @@ export default function TaskManager() {
     const [isDarkMode, setIsDarkMode] = useState(true)
     const [categories, setCategories] = useState<string[]>([])
     const [assignees, setAssignees] = useState<string[]>([])
-    const [statuses, setStatuses] = useState<string[]>([
-        'Dev Pending ⏳', 'Dev In Progress 🔨', 'Done ✅', 'In QA 🧪',
-        'On Hold ⏸️', 'Blocked ⛔', 'Deployed 🏁', 'In Integration 🛠️'
-    ])
+    const statuses = ['Dev Pending ⏳', 'Dev In Progress 🔨', 'Done ✅', 'In QA 🧪',
+        'On Hold ⏸️', 'Blocked ⛔', 'Deployed 🏁', 'In Integration 🛠️']
     const [newStatus, setNewStatus] = useState('Dev Pending ⏳')
     const editInputRef = useRef<HTMLInputElement>(null)
     const cursorRef = useRef<HTMLDivElement>(null)
@@ -434,7 +432,7 @@ export default function TaskManager() {
                             hour12: true
                         })}
                     </div>
-                    <h1 className="text-2xl font-bold">DPWS's space</h1>
+                    <h1 className="text-2xl font-bold">DPWS&apos;s space</h1>
                     <button onClick={toggleDarkMode} className="p-2 rounded-full bg-gray-800 text-white transition-colors duration-200 hover:bg-gray-700">
                         {isDarkMode ? <SunIcon size={20} /> : <MoonIcon size={20} />}
                     </button>
